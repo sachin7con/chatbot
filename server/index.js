@@ -1,41 +1,32 @@
-const express = require('express');
-const fs = require('fs');
-const path = require('path');
-const cors = require('cors');
-
+const express = require("express");
 const app = express();
+const fs = require("fs");
+const path = require("path");
+
 const PORT = process.env.PORT || 3000;
 
-const faqs = JSON.parse(fs.readFileSync(path.join(__dirname, 'faq.json'), 'utf-8'));
+// Serve static files from the client directory
+app.use(express.static(path.join(__dirname, "../client")));
 
-// Middleware
-app.use(cors());
-app.use(express.json());
-
-// Serve static files from client folder
-app.use(express.static(path.join(__dirname, '../client')));
-
-// API route
-app.post('/api/ask', (req, res) => {
-  const { message } = req.body;
-  const lowerMsg = message.toLowerCase();
-
-  const match = faqs.find(faq =>
-    faq.keywords.some(kw => lowerMsg.includes(kw))
-  );
-
-  if (match) {
-    res.json({ reply: match.answer });
-  } else {
-    res.json({ reply: "Sorry, I didn’t understand that. Please contact support." });
+// API route to serve FAQ data
+app.get("/api/faq", (req, res) => {
+  const faqPath = path.join(__dirname, "faq.json");
+  try {
+    const data = fs.readFileSync(faqPath, "utf8");
+    const faq = JSON.parse(data);
+    res.json(faq);
+  } catch (err) {
+    console.error("Error reading faq.json:", err);
+    res.status(500).json({ error: "Failed to read FAQ data" });
   }
 });
 
-// Serve index.html on root
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/index.html'));
+// Fallback route - serve index.html for any unknown route
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/index.html"));
 });
 
+// Start the server
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
