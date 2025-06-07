@@ -1,0 +1,78 @@
+[
+  
+  {
+    "question": "Hi",
+    "answer": "Hello, Welcome to Silverzone ERP Help",
+    "keywords": ["hi","Hi", "Hello",  "Hello"]
+  },
+  {
+    "question": "How to register for Olympiad?",
+    "answer": "Go to ERP > Registration > Select student and subjects.",
+    "keywords": ["register", "registration", "olympiad"]
+  },
+  {
+    "question": "When will books be delivered?",
+    "answer": "Books are usually delivered within 7–10 working days after payment.",
+    "keywords": ["book", "delivery", "delivered", "books"]
+  },
+  {
+    "question": "How to check result?",
+    "answer": "Login to ERP > Results section.",
+    "keywords": ["result", "check", "results"]
+  },
+  {
+    "question": "What is the last date for Olympiad registration?",
+    "answer": "The last date for Olympiad registration is usually 30–40 days before the exam. Check the ERP or official circular.",
+    "keywords": ["last date", "registration deadline", "register", "deadline"]
+  },
+  {
+    "question": "How to download admit card?",
+    "answer": "Admit cards can be downloaded from ERP > Admit Card section before the exam date.",
+    "keywords": ["admit card", "hall ticket", "download admit"]
+  },
+  {
+    "question": "What are the exam modes available?",
+    "answer": "Silverzone Olympiads are conducted in both Online and Offline (pen-paper) modes depending on the subject and school preference.",
+    "keywords": ["exam mode", "online", "offline", "pen paper"]
+  },
+  {
+    "question": "How to contact Silverzone support?",
+    "answer": "You can email at info@silverzone.org or call 011–69114100 (Mon–Fri, 10 AM–5 PM).",
+    "keywords": ["contact", "support", "email", "phone"]
+  },
+  {
+    "question": "Are Olympiad books available for all subjects?",
+    "answer": "Yes, preparatory books are available for all Olympiad subjects and levels.",
+    "keywords": ["books", "subjects", "study material"]
+  },
+  {
+    "question": "When are Olympiad results declared?",
+    "answer": "Results are declared approximately 30–45 days after the exam date. They are uploaded in the ERP.",
+    "keywords": ["result date", "when result", "result", "declared"]
+  },
+  {
+    "question": "How to correct student details after registration?",
+    "answer": "Corrections can be requested via email or updated in ERP before final confirmation.",
+    "keywords": ["correct", "edit", "student details", "change name"]
+  },
+  {
+    "question": "Where can I find syllabus for the Olympiad?",
+    "answer": "Syllabus is available in the ERP and also on the official website under each subject section.",
+    "keywords": ["syllabus", "topics", "subject-wise", "curriculum"]
+  },
+  {
+    "question": "How are Olympiad ranks calculated?",
+    "answer": "Ranks are calculated based on marks obtained, time taken, and tie-breaking logic set by Silverzone.",
+    "keywords": ["rank", "ranking", "marks", "how ranks"]
+  },
+  {
+    "question": "When will certificates be issued?",
+    "answer": "Participation and merit certificates are uploaded in ERP within 45 days of result declaration.",
+    "keywords": ["certificate", "merit", "participation", "download"]
+  }, 
+  {
+    "question": "When will be the exam?",
+    "answer": "Exams will be in the month of November/ December, please check the tentative dates at https://www.silverzone.org/olympiadsdates ",
+    "keywords": ["exam", "exam date", "Exam date" ]
+  }
+]
