@@ -21,6 +21,31 @@ app.get("/api/faq", (req, res) => {
   }
 });
 
+app.post("/api/ask", (req, res) => {
+  const { message } = req.body;
+
+  if (!message) {
+    return res.status(400).json({ reply: "No message received" });
+  }
+
+  const msg = message.toLowerCase();
+
+  let reply = "I'm not sure how to answer that yet.";
+
+  if (msg.includes("hello") || msg.includes("hi")) {
+    reply = "Hello! How can I help you today?";
+  } else if (msg.includes("exam")) {
+    reply = "Exam-related queries include date, time, and results.";
+  } else if (msg.includes("register")) {
+    reply = "You can register through your school or online.";
+  } else if (msg.includes("bye")) {
+    reply = "Goodbye! Have a great day!";
+  }
+
+  res.json({ reply });
+});
+
+
 // Fallback route - serve index.html for any unknown route
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/index.html"));
