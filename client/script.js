@@ -25,7 +25,10 @@
     userInput.value = '';
 
     // Send message to backend API
-    fetch('http://localhost:3000/api/ask', {
+    const baseURL = window.location.origin;
+    // fetch('/api/ask', {     --> for relative path 
+
+    fetch(`${baseURL}/api/ask`, {       // fetches on both locally and In production
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ message }),
