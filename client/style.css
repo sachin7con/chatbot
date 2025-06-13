@@ -2,34 +2,29 @@
   box-sizing: border-box;
 }
 
-/* Base styling for body */
 body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
   background: #f2f2f2;
-  color: #000;
 }
 
-/* Container centers everything with max-width for large screens */
 .container {
-  max-width: 90%;
-  margin: 20px auto;
+  max-width: 600px;
+  margin: 40px auto;
   padding: 10px;
 }
 
-/* Logo at the top, center-aligned */
 .logo-container {
   text-align: center;
   padding: 10px;
 }
 
 .logo-container img {
-  max-height: 60px;
+  max-height: 93px;
   width: auto;
 }
 
-/* Chat box with flexible column layout */
 #chat-box {
   display: flex;
   flex-direction: column;
@@ -41,31 +36,26 @@ body {
   box-shadow: 0 0 10px rgb(0 0 0 / 0.1);
 }
 
-/* Chat messages area should grow to fill available space */
 #chat-log {
-  flex-grow: 1;
+  flex: 1;
   padding: 10px;
   overflow-y: auto;
   background: #f9f9f9;
 }
 
-/* Input area sticks to the bottom */
 #input-area {
   display: flex;
   border-top: 1px solid #ccc;
-  background: #fff;
 }
 
-/* Text input styling */
 #user-input {
-  flex-grow: 1;
+  flex: 1;
   padding: 12px;
   font-size: 16px;
   border: none;
   outline: none;
 }
 
-/* Send button styling */
 button {
   padding: 12px 20px;
   background: #007BFF;
@@ -73,15 +63,14 @@ button {
   color: #fff;
   font-size: 16px;
   cursor: pointer;
-  transition: background 0.3s ease-in-out;
 }
 
 button:hover {
   background: #0056b3;
 }
 
-/* User messages on the right side */
-.chat-message-user {
+/* User messages */
+#chat-log div[role='user'] {
   padding: 8px;
   margin: 6px 0;
   background: #d1e7dd;
@@ -89,8 +78,8 @@ button:hover {
   align-self: flex-end;
 }
 
-/* Bot messages on the left side */
-.chat-message-bot {
+/* Bot messages */
+#chat-log div[role='bot'] {
   padding: 8px;
   margin: 6px 0;
   background: #e2e3e5;
@@ -99,7 +88,7 @@ button:hover {
 }
 
 /* Error messages */
-.chat-message-error {
+#chat-log div[role='error'] {
   padding: 8px;
   margin: 6px 0;
   background: #f8d7da;
@@ -107,28 +96,36 @@ button:hover {
   align-self: flex-start;
 }
 
-/* Responsive tweaks for small screens */
+/* Mobile responsiveness */
 @media (max-width: 600px) {
   .container {
     margin: 10px;
     padding: 5px;
   }
 
+  .logo-container img {
+    max-height: 40px;
+  }
+
   #chat-box {
-    height: 90vh;
+    height: 70vh;
+  }
+
+  #chat-log {
+    padding: 5px;
+    font-size: 14px;
+  }
+
+  #input-area {
+    padding: 5px;
   }
 
   #user-input {
-    padding: 10px;
+    padding: 8px;
     font-size: 14px;
   }
 
   button {
+    padding: 8px 12px;
     font-size: 14px;
-    padding: 10px 15px;
   }
-
-  .logo-container img {
-    max-height: 50px;
-  }
-}
